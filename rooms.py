@@ -1,0 +1,43 @@
+#!/usr/bin/env python3.10
+
+def getRooms(room): #This returns the rooms you can move to depending on what room you are in.
+    if room == 1:
+        return [2, 5, 8]
+    elif room == 2:
+        return [1, 3, 10]
+    elif room == 3:
+        return [2, 4, 12]
+    elif room == 4:
+        return [3, 5, 14]
+    elif room == 5:
+        return [1, 4, 6]
+    elif room == 6:
+        return [5, 7, 15]
+    elif room == 7:
+        return [6, 8, 17]
+    elif room == 8:
+        return [1, 7, 9]
+    elif room == 9:
+        return [8, 10, 18]
+    elif room == 10:
+        return [2, 9, 11]
+    elif room == 11:
+        return [10, 12, 19]
+    elif room == 12:
+        return [3, 11, 13]
+    elif room == 13:
+        return [12, 14, 20]
+    elif room == 14:
+        return [4, 13, 15]
+    elif room == 15:
+        return [6, 14, 16]
+    elif room == 16:
+        return [15, 17, 20]
+    elif room == 17:
+        return [7, 16, 18]
+    elif room == 18:
+        return [9, 17, 19]
+    elif room == 19:
+        return [11, 18, 20]
+    elif room == 20:
+        return [13, 16, 19]
