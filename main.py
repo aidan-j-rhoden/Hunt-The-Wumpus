@@ -68,15 +68,15 @@ def shoot(stats):
                 continue
         if direction not in getRooms(stats.player):
             direction = choice(getRooms(stats.player))
-        arrow = stats.player
         for i in range(0, distance):
             if i == 0:
                 arrow = direction
+                cameFrom = arrow
                 print("    Your arrow flies into room {}.".format(direction))
             else:
                 while True:
                     num = choice(getRooms(arrow))
-                    if num == arrow: #Don't allow the arrow to turn right around and skewer you.
+                    if num == cameFrom: #Don't allow the arrow to turn right around and skewer you.
                         continue
                     else:
                         arrow = num 
@@ -86,7 +86,7 @@ def shoot(stats):
                 print("Your stinkin' crooked arrow flew back and hit you.")
                 quit()
             if arrow == stats.wumpus:
-                print("AHA! You got the wumpus!\nHEE HEE HEE - The Wumpus'll get you next time!!")
+                print("\nAHA! You got the wumpus!\nHEE HEE HEE - The Wumpus'll get you next time!!")
                 quit()
             sleep(0.4)
         print("You missed, you are now minus one arrow, plus you startled the Wumpus.")
