@@ -1,4 +1,4 @@
-#!/usr/bin/env python3.10
+!/usr/bin/env python3.10
 
 from subprocess import run
 from random import randint, choice
@@ -24,7 +24,7 @@ def intro(stats):
 def main(stats):
     while True:
         if stats.wumpus == stats.player:
-            print("The Wumpus got you!!")
+            print("\nThe Wumpus got you!!")
             break
         if stats.bottomlessPit1 == stats.player or stats.bottomlessPit2 == stats.player:
             print("You fall into a bottomless pit.")
@@ -59,19 +59,22 @@ def shoot(stats):
                 assert 0 < distance < 6
                 break
             except:
+                print("\nPlease.  Did you really think that would work?\n")
                 continue
         while True:        
             try:
                 direction = int(input("Which room do you want to shoot the crooked arrow into? [{}, {}, {}] ".format(getRooms(stats.player)[0], getRooms(stats.player)[1], getRooms(stats.player)[2])))
                 break
             except:
+                print("\nWhy are you still trying this?  I might sic the wumpus on you.\n")
                 continue
         if direction not in getRooms(stats.player):
             direction = choice(getRooms(stats.player))
         for i in range(0, distance):
+            #print("Loop'd")
             if i == 0:
                 arrow = direction
-                cameFrom = arrow
+                cameFrom = stats.player 
                 print("    Your arrow flies into room {}.".format(direction))
             else:
                 while True:
