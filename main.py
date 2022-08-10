@@ -1,4 +1,4 @@
-!/usr/bin/env python3.10
+#!/usr/bin/env python3.10
 
 from subprocess import run
 from random import randint, choice
@@ -46,7 +46,14 @@ def main(stats):
             print("    I smell a wumpus.")
         result = input("\nShoot or Move? [S-M] ")
         if result.upper() == "M":
-            stats.player = int(input("Which room? [{}, {}, {}] ".format(getRooms(stats.player)[0], getRooms(stats.player)[1], getRooms(stats.player)[2])))
+            while True:
+                try:
+                    result = int(input("Which room? [{}, {}, {}] ".format(getRooms(stats.player)[0], getRooms(stats.player)[1], getRooms(stats.player)[2])))
+                    assert result in getRooms(stats.player)
+                    break
+                except:
+                    print("Nope.")
+            stats.player = result
             continue
         elif result.upper() == "S":
             shoot(stats)
