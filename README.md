@@ -1,6 +1,6 @@
 # Hunt The Wumpus
 
-- This is a clone of the 1973 [game by Gregory Yob](https://en.m.wikipedia.org/wiki/Hunt_the_Wumpus), made in python
+- This is a clone of the 1973 [game by Gregory Yob](https://en.m.wikipedia.org/wiki/Hunt_the_Wumpus), made in Python
 - It runs, and is played from, the command line.
 
 For those of you who must know, the map looks like this when represented in 2d:
