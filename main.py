@@ -78,7 +78,6 @@ def shoot(stats):
         if direction not in getRooms(stats.player):
             direction = choice(getRooms(stats.player))
         for i in range(0, distance):
-            #print("Loop'd")
             if i == 0:
                 arrow = direction
                 cameFrom = stats.player 
